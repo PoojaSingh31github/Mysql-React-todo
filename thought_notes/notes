@@ -1,0 +1,56 @@
+******Here My Assignment 3 of MySQL and React Todo******
+
+First of all, here I made three folder one for backend and one for frontend and last one for thought notes.
+
+Backend:-
+====================================================================================
+Here, I made server.js by running "type null > server.js" command.
+
+APIS:-
+-----
+1) POST /addtask:- This endpoint adds a new task to the list. It expects a JSON object with a 'task' property in the request body. It performs an SQL INSERT operation into a table named 'list'.
+
+2) GET /alltask:- This endpoint retrieves all tasks from the 'list' table. It executes an SQL SELECT query to fetch all records from the 'list' table and returns them as a JSON response.
+
+3) DELETE /deletetask/:Id:- This endpoint deletes a task by its ID from the 'list' table. It expects the task ID as a parameter in the URL. It performs an SQL DELETE operation based on the provided task ID.
+
+
+connect with MySQL:-
+-------------------
+here i gave:-
+ my host: "localhost"
+ my user: "root"
+ my password: ""
+ my database: "todo"
+
+And then I connect it with a method 'connection.connect'
+
+mySQL:-
+-----
+for checking my backend, first I installed the Xampp...and there i start Xampp control panel... and make start to apache and MySQL... after starting it i click admin button... and for making my new database... I wrote "create database todo" and click go... by this my new database created... after that I made table, for table I wrote "create table list(id INT AUTO_INCREMENT PRIMARY KEY,lists VARCHAR(255))" click on go... and database ready to work with frontend.
+
+Frontend:-
+====================================================================================
+
+Functions:-
+--------
+1) fetchTasks:- function for fetching the data from backend by url"http://localhost:5000/alltask".
+
+2) handleAddTask:- function for adding the data by url "http://localhost:5000/addtask".
+
+3) handleDeleteTask:- function for deleteing the data by "http://localhost:5000/deletetask/${taskId}".
+
+4) App:- which I put all the function here.
+
+useState:-
+---------
+   i) useState([]) is initializing a state variable named tasks and its associated updater function setTasks. The tasks variable will hold an array initially populated with an empty array []. This array is meant to store the list of tasks in your application.
+
+   ii) useState('') is initializing another state variable named inputText and its associated updater function setInputText. The inputText variable will hold a string and is initially set to an empty string ''. This string is typically used to store the value entered into an input field or any text entered by the user.
+
+useEffect:-
+----------
+  i) The useEffect hook will run after the initial render of the component ([] as the dependency array signifies this).
+
+  ii) It calls the fetchTasks() function immediately after the component mounts or renders for the first time.
+
